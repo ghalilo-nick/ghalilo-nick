@@ -294,3 +294,20 @@ arithmetic expression: )
 result = eval(expression)
 
 print = ("Result :", result)
+- nom : Cache
+  utilisations : actions/cache@v4.1.2
+  avec:
+    # Une liste de fichiers, de répertoires et de modèles génériques à mettre en cache et à restaurer
+    chemin:
+    # Une clé explicite pour restaurer et sauvegarder le cache
+    clé:
+    # Une chaîne multiligne ordonnée répertoriant les clés correspondant au préfixe, qui sont utilisées pour restaurer le cache obsolète si aucun résultat de cache n'a été obtenu pour la clé. Notez que `cache-hit` renvoie false dans ce cas.
+    restore-keys: # facultatif
+    # La taille du bloc utilisé pour diviser les fichiers volumineux lors du téléchargement, en octets
+    upload-chunk-size: # facultatif
+    # Un booléen facultatif lorsqu'il est activé, permet aux exécuteurs Windows d'enregistrer ou de restaurer des caches qui peuvent être restaurés ou enregistrés respectivement sur d'autres plates-formes
+    enableCrossOsArchive : # facultatif, la valeur par défaut est false
+    # Échec du workflow si l'entrée de cache n'est pas trouvée
+    fail-on-cache-miss: # facultatif, la valeur par défaut est false
+    # Vérifiez si une entrée de cache existe pour les entrées données (clé, clés de restauration) sans télécharger le cache
+    lookup-only : # facultatif, la valeur par défaut est false
